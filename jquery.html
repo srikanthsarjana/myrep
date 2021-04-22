@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("body").hover(function(){
+                $(this).css("background","black");
+            })
+            $(".d4").bind("click",function(){ //on ind event we can add multiple events to the function binding the another eventd to function
+                alert("this should be removed")
+                $(this).hide();
+            })
+            
+        $( "#target" ).focus(function() {
+            $( "#target" ).css("background","blue");// if the input feild 1 is focused and trying press cursor on document the the alert will come
+            });
+
+            $("#target").blur(function(){
+                $(this).css('background','')
+            })
+
+            $(window).scroll(function(){
+                console.log("srcolling");
+            })
+          
+            $(window).resize(function(){
+                console.log("resizing");
+            })
+
+            $( ".d3" ).toggle(function() {
+             console.log( "First handler for .toggle() called." );
+            }, function() {
+            console.log( "Second handler for .toggle() called." );
+            });
+
+            $( ".d1" ).on( "dblclick", function() {
+             alert( $( this ).text("iam trigger") );
+             });
+
+             $( ".d2" ).trigger( "dblclick" );
+            })
+            $(document).ready(function(){
+                $("#btnfout").click(function(){
+                    $("#fade").fadeIn();
+                })
+                $("#btnfin").click(function(){
+                    $("#fade").fadeOut();
+                })
+                
+            })
+
+            $(document).ready(function(){
+                $("#btnsld").click(function(){
+                    $("#sld").show();
+                })
+                $("#btnsld1").click(function(){
+                    $("#sld").hide();
+                })
+
+                $("#sbmit").click(function(){
+                   alert( $("#target").val());
+                })
+
+                $(".d1").click(function(){
+                    $(".d1").attr("id","cls");
+                
+                })
+
+                $("body").attr("h2","hello ia h2");
+
+
+            })
+
+    
+    </script>
+    <style>
+       div{
+            border:2px solid red;
+            padding:50px;
+            margin-left:60%;
+            margin-right: 5%;
+        }
+        #cls{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="btnsld1">slideup</button>
+    <button id="btnsld">slidedown</button>
+
+    
+
+    <div id="sld" style="background-color:#126675;">
+
+    </div><br>
+
+    <div class="d1" style="background-color: red;">
+        <h1 style="background:white;">hi iam h1</h1>
+    </div><br>
+    
+    <div class="d2" style="background-color: blue;"></div><br>
+
+    <div class="d3" style="background-color:yellow;"></div><br>
+
+    <div class="d4" style="background-color: green;"></div>
+
+    <form>
+        <input id="target" type="text">
+        <input type="text" value="Field 2">
+        <button id ="sbmit">submit</button>
+      </form>
+      <div id="other">
+        Trigger the handler
+      </div>
+
+      <button id="btnfin">fadeOut</button>
+      <button id="btnfout">fadein</button>
+
+      <div style="background: pink;" id="fade">
+          hi iam fading div
+      </div>
+     
+
+
+    
+</body>
+</html>
