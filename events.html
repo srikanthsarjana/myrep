@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+</head>
+<body>
+    <form action="">
+      <label for="">firstname</label>  
+      <input type="text" id="focus" onfocus="focusfunction(this)" onblur="blurfunc(this)" oninput="inputfunc(this)" onchange="changefunc(this)"><br/><br>
+      <label for="">age</label>
+      <input type="text" id="focus" onfocus="focusfunction(this)" onblur="blurfunc(this)"><br/><br/>
+     <label for="">Country</label> 
+     <select name="" id="" id="focus" onfocus="focusfunction(this)" onblur="blurfunc(this)" onchange="changefunc(this)">
+        <option value="india">india</option>
+        <option value="london">london</option>
+        <option value="america">america</option>
+
+      </select><br/><br/>
+      
+      <input type="submit"></br>
+
+    </form>
+
+    <div id="hi" style="border:2px solid blue";></div>
+
+    <form action="" onsubmit="submitfunc(this)">
+        <label for="">firstname</label>  
+        <input type="text" id="select" onselect="selectfunc(this)" oninvalid="alert('enter name')"required><br/><br>
+        <label for="">age</label>
+        <input type="text" id="select"><br/><br/>
+       <label for="">Country</label> 
+       <select name="" id="" id="select">
+          <option value="india">india</option>
+          <option value="london">london</option>
+          <option value="america">america</option>
+  
+        </select><br/><br/>
+        
+        <input type="submit"></br>
+  
+      </form>
+
+
+    
+    <script>
+    function a(){
+    var a=10;
+    var b=20;
+    alert(a+b);
+
+}
+    function focusfunction(sri){
+         sri.style.background="blue";//onfocus
+    }
+
+    function blurfunc(sri){
+        sri.style.background="green";//onblur
+
+    }
+
+    function inputfunc(sri){
+        var b=sri.value;
+        document.getElementById("hi").innerHTML=b;//input chnaging
+    }
+
+    function changefunc(sri){
+        var b=sri.value;
+        document.getElementById("hi").innerHTML=b; //changing
+    }
+    function selectfunc(){
+        console.log("selected sometext")//selected
+    }
+
+    function submitfunc(){
+        var b=document.getElementById("select").value;
+       // alert("hello"+b);
+    }
+    function invalidfun(){
+        alert("please enter name");
+    }
+
+    </script>
+</body>
+</html>
