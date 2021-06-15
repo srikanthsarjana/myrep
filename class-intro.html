@@ -1,0 +1,91 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            // class cls{}
+            // let a=new cls();  //instantiating the class
+            // console.log(a);  //empty class.
+            // console.log(typeof cls);   //declares it function type.*/
+
+
+
+        // class cls1{
+        //     constructor(name,age){            // class accepting mustly one constructor
+        //         this.name=name;
+        //         this.age=age;
+        //         console.log(this.name,this.age);
+        //     }
+        // }
+        // let b=new cls1("rajendra",24);  //instantiating the class*/
+
+
+
+
+        /*class cls1{
+            constructor(name){            // class accepting mustly one constructor
+                console.log(name);
+            }
+        }
+        let b=new cls1("rajendra"); */
+
+
+
+
+        // class cls1{
+        //     constructor(){            // class accepting mustly one constructor
+        //         console.log("am class");
+        //     }
+        // }
+        // let b=new cls1(); 
+
+
+
+
+    //    class parent{
+    //         constructor(name){
+    //             console.log(name + "parent-constructor");
+    //         }
+    //         fun(a){
+    //             //console.log("am function");
+    //             return a;
+    //         }
+    //     }
+    //     class child extends parent{ 
+           
+    //     }
+    //     let c=new child("rajendra");
+    //     c.fun();
+    //     console.log(c.fun(10));
+
+
+        class cls{
+            constructor(name,age){
+                console.log(name,age +'parent constructor');
+            }
+             cha(){
+                return 10;
+            }
+        }
+        class cls1 extends cls{
+            constructor(name,age,gender){
+                super(name,age);
+                console.log(name,age,gender);
+            }
+            cha(){
+                //return 1000;
+                return super.cha();        //it is for parent functon       
+             }
+        }
+        let a=new cls1('azzu',25,'male');
+        console.log(a.cha());        ''   
+
+
+    </script>
+</body>
+</html>
